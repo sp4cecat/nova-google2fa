@@ -37,18 +37,17 @@
             @include('nova::partials.logo')
         </div>
 
-        <form id="authenticate_form" class="bg-white shadow rounded-lg p-8 max-w-xl mx-auto" method="POST"
+        <form id="authenticate_form"
+              class="bg-white shadow rounded-lg p-8 max-w-lg mx-auto" method="POST"
+              style="border-radius: 6px !important;"
               action="/los/2fa/authenticate">
             @csrf
-            <h2 class="p-2">Two Factor Authentication</h2>
+            <h2 class="p-2 text-center">Two Factor Authentication</h2>
 
-            <p class="p-2">Two factor authentication (2FA) strengthens access security by requiring two methods (also
-                referred to as factors) to
-                verify your identity.
-                Two factor authentication protects against phishing, social engineering and password brute force attacks
-                and secures your logins from attackers
-                exploiting weak or stolen credentials.</p>
-            <p class="p-2"><strong>Enter the pin from Google Authenticator Enable 2FA</strong></p>
+            <p class="p-2 text-center">Two factor authentication (2FA) strengthens security by requiring two methods (factors) to verify your identity.
+                2FA protects against phishing and password attacks and secures your logins from attackers. We use an Authenticator as the second factor.</p>
+            <p class="p-2 text-center">Some 2FA app options include:</p>
+            <p class="p-2 text-center">Google Authenticator, Microsoft Authenticator, Authy</p>
 
             <div class="text-center pt-3">
                 <div class="mb-6 w-1/2" style="display:inline-block">
@@ -61,23 +60,35 @@
                                         document.getElementById('error_text').style.display = 'none';
                                         document.getElementById('recover_div').style.display = 'block';
                                     "
-                                    class="w-1/4 btn btn-default btn-primary hover:bg-primary-dark" type="button">
+                                    class="w-1/4 btn btn-default btn-primary hover:bg-primary-dark"
+                                    style="border-radius: 6px !important;"
+                                    type="button">
                                 Recover
                             </button>
                         </p>
                     @endif
                     <div id="secret_div">
-                        <label class="block font-bold mb-2" for="co">One Time Password</label>
+                        <input type="checkbox"
+                               class="mt-4 mb-4"
+                               id="remember-device"
+                               name="remember-device"
+                               value="">
+                        <label for="remember-device">Before entering code, check to remember on this device</label>
+                        <label class="block font-bold mb-2" for="co">Enter the pin from your authenticator app:</label>
                         <input class="form-control form-input form-input-bordered w-full" id="secret" type="number"
+                               style="border-radius: 6px !important;"
                                name="secret" value="" onkeyup="checkAutoSubmit(this)" autofocus="">
                     </div>
                     <div id="recover_div" style="display: none;">
                         <label class="block font-bold mb-2" for="co">Recovery code</label>
                         <input class="form-control form-input form-input-bordered w-full" id="recover" type="text"
+                               style="border-radius: 6px !important;"
                                name="recover" value="" autofocus="">
                     </div>
                 </div>
-                <button class="w-1/2 btn btn-default btn-primary hover:bg-primary-dark" type="submit">
+                <button class="w-1/2 btn btn-default btn-primary hover:bg-primary-dark"
+                        style="border-radius: 6px !important;"
+                        type="submit">
                     Authenticate
                 </button>
             </div>
