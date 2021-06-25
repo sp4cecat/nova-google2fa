@@ -20,7 +20,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Sp4cecat\\Google2fa\\ToolServiceProvider"
+                "Lifeonscreen\\Google2fa\\ToolServiceProvider"
             ]
         }
     },
