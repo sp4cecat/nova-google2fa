@@ -1,6 +1,6 @@
 {
-    "name": "lifeonscreen/nova-google2fa",
-    "description": "This package provides Google2FA to Laravel Nova.",
+    "name": "sp4cecat/nova-google2fa",
+    "description": "Forked from the lifeonscreen package, makes changes to the authenticate blade",
     "keywords": [
         "laravel",
         "nova"
@@ -14,13 +14,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Lifeonscreen\\Google2fa\\": "src/"
+            "Sp4cecat\\Google2fa\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Lifeonscreen\\Google2fa\\ToolServiceProvider"
+                "Sp4cecat\\Google2fa\\ToolServiceProvider"
             ]
         }
     },
